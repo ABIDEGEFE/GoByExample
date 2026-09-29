@@ -21,7 +21,7 @@ func GoMaps(){
 
 	num, prs := mp["two"] // the second optional return value helps to determine whether the key existed or not by returning boolean value.
 	if prs {
-		fmt.Println("The existed", num)
+		fmt.Println("The key existed", num)
 	} else{
 		fmt.Println("The key does not exist")
 	}
@@ -29,4 +29,6 @@ func GoMaps(){
 	// Declaring and initalizing the map at the same line
 	mp2 := map[string]bool{"Status":true}
 	fmt.Println(mp2)
+	mp["two"] = 5
+	fmt.Println(mp)
 }
