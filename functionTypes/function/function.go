@@ -50,3 +50,9 @@ func ClosureFunc() func() int {
 		return count
 	}
 }
+
+func SampleFunc() int{
+	var num1, num2 int = 4, 5
+	var sum int = num1 + num2
+	return sum
+}
