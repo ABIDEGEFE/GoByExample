@@ -118,5 +118,106 @@ The CPU cannot execute arithmetic operations directly inside main memory (RAM/He
 
 ---
 
+# How Recursive Functions Work in Go
 
+When you run a recursive function like `fib(4)`, Go doesn't do anything magical—it uses standard execution mechanics governed by the Go Runtime and your computer's hardware.
+
+---
+
+## 1. Core Mechanics: CPU vs. RAM
+
+Before diving into the step-by-step execution, here is how the hardware components divide the labor:
+
+* **RAM (Stack Memory):** Every time a function is called, Go allocates a modern, lightweight block of memory called a **Stack Frame** on the goroutine's stack. This frame stores:
+* Local variables (like `n`).
+* Return Address (where the CPU should return after this function finishes).
+
+
+* **CPU (Registers & Execution):** The CPU executes instructions sequentially line-by-line. It uses a special register called the **Program Counter (PC)** to track the active instruction, process arithmetic, and transfer data between RAM and registers.
+
+---
+
+## 2. Code Example
+
+Here is a standard Fibonacci implementation in Go:
+
+```go
+func fib(n int) int {
+    if n <= 1 {
+        return n
+    }
+    return fib(n-1) + fib(n-2)
+}
+
+```
+
+---
+
+## 3. Step-by-Step Execution of `fib(4)`
+
+<img width="1355" height="700" alt="Recursive" src="https://github.com/user-attachments/assets/b21ae4fc-bc6a-46b6-865b-a0981f470d77" />
+
+
+Go executes code sequentially. In a double recursion like `fib(n-1) + fib(n-2)`, the CPU must completely finish the left branch (`fib(n-1)`) before it can evaluate the right branch (`fib(n-2)`).
+
+### Detailed Hardware Timeline
+
+1. **CPU calls `fib(4)`:**
+* **RAM:** A stack frame for `fib(4)` is pushed ($n = 4$).
+* **CPU:** Checks if $4 \le 1$ (`false`). Moves to the return statement: `fib(3) + fib(2)`. It pauses `fib(4)` and calls the left branch: `fib(3)`.
+
+
+2. **CPU calls `fib(3)`:**
+* **RAM:** A frame for `fib(3)` is pushed on top of `fib(4)` ($n = 3$).
+* **CPU:** Checks condition (`false`). Pauses `fib(3)` and calls `fib(2)`.
+
+
+3. **CPU calls `fib(2)`:**
+* **RAM:** A frame for `fib(2)` is pushed on top ($n = 2$).
+* **CPU:** Checks condition (`false`). Pauses `fib(2)` and calls `fib(1)`.
+
+
+4. **CPU calls `fib(1)` *(Base Case Reached)*:**
+* **RAM:** A frame for `fib(1)` is pushed ($n = 1$).
+* **CPU:** Checks if $1 \le 1$ (`true`). Fetches the value `1`.
+* **RAM:** The `fib(1)` frame is popped (destroyed). The CPU uses the saved return address to jump back to the paused `fib(2)` frame.
+
+
+5. **CPU resumes `fib(2)`:**
+* Left side evaluated to `1`. The CPU now resolves the right side: `fib(0)`.
+* **RAM:** A frame for `fib(0)` is pushed ($n = 0$).
+* **CPU:** Evaluates base case, returns `0`.
+* **RAM:** The `fib(0)` frame is popped.
+* **CPU:** Adds the results ($1 + 0 = 1$). `fib(2)` is now complete.
+* **RAM:** The `fib(2)` frame is popped.
+
+
+6. **CPU resumes `fib(3)`:**
+* Its left side (`fib(2)`) finished and returned `1`. Now the CPU calls its right side: `fib(1)`.
+* This cycle repeats down the right side of the call tree.
+
+
+
+Eventually, all sub-calls resolve, their stack frames are cleared, and the CPU calculates the final math for `fib(4)` ($2 + 1 = 3$), returning it to your `main()` function.
+
+---
+
+## 4. The Go-Specific Mechanism: Contiguous Stacks
+
+In languages like C or Java, if your recursion goes too deep, you get a hard crash called a **Stack Overflow**. This happens because those environments allocate a fixed stack size per thread (e.g., 1MB).
+
+Go handles stack memory differently and more efficiently:
+
+* **Tiny Initial Allocation:** Go starts every goroutine stack at a lightweight **2 KB**.
+* **Dynamic Stack Checks:** Before executing a function call, Go runs a fast check called a **stack guard**. If the current call exceeds allocated space, the Go Runtime intervenes.
+* **Grow and Copy:** The runtime allocates a new, contiguous block of RAM that is **double the size**, copies the entire existing stack (all active recursive frames) into the new space, updates memory pointers, and lets the CPU continue seamlessly.
+
+> **Key Takeaway:** Because of contiguous stacks, standard stack overflow crashes are exceptionally rare in Go unless total system RAM is exhausted.
+
+---
+
+## 5. When to Use Recursion
+
+* **Branching Data Structures:** Use recursion when dealing with tree-like or graph-like structures (e.g.,JSON parsers, binary trees).
+* **Linear Data Structures:** Use standard iteration (`for` loops) when working with linear sequences like slices or arrays for cleaner code and optimal performance.
 
