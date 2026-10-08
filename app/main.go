@@ -1,7 +1,7 @@
 package main
 
 import (
-  "fmt"
+  // "fmt"
   // "codingPractice/values"
   // "codingPractice/variables"
   // "codingPractice/constant"
@@ -9,7 +9,9 @@ import (
   // "codingPractice/array"
   // "codingPractice/slices"
   // "codingPractice/maps"
-  "codingPractice/functionTypes/function"
+  // "codingPractice/functionTypes/function"
+  // "codingPractice/ranges"
+  "codingPractice/pointers"
 )
 
 func main(){
@@ -29,27 +31,34 @@ func main(){
   // slices.GoSlices()
   // maps.GoMaps()
   
-  function.GoFunction()
-  age := function.SetAge("22/1/2003")
-  fmt.Println("You are", age, " years old")
-  total := function.Sum(1, 2, 3, 4)
-  fmt.Println("Total value", total)
-  val, err := function.ReturnMulitpleValues("akalu") //if we only want subset of the return value, we can left either as blank(_, err := func())
-  if err != nil {
-    fmt.Println("something went wrong", err)
-  }else{
-    fmt.Println("Correct", val)
-  }
+  // function.GoFunction()
+  // age := function.SetAge("22/1/2003")
+  // fmt.Println("You are", age, " years old")
+  // total := function.Sum(1, 2, 3, 4)
+  // fmt.Println("Total value", total)
+  // val, err := function.ReturnMulitpleValues("akalu") //if we only want subset of the return value, we can left either as blank(_, err := func())
+  // if err != nil {
+  //   fmt.Println("something went wrong", err)
+  // }else{
+  //   fmt.Println("Correct", val)
+  // }
 
-  sum := function.VariadicFunc(1, 2, 3, 4)
-  fmt.Println("Sum of slice", sum)
-  function.PrintAny(1, 2, true, "hey there")
+  // sum := function.VariadicFunc(1, 2, 3, 4)
+  // fmt.Println("Sum of slice", sum)
+  // function.PrintAny(1, 2, true, "hey there")
 
-  nextInt := function.ClosureFunc()
-  fmt.Println(nextInt())
-  fmt.Println(nextInt())
-  newInt := function.ClosureFunc()
-  fmt.Println(newInt())
-  fmt.Println(nextInt())
+  // nextInt := function.ClosureFunc()
+  // fmt.Println(nextInt())
+  // fmt.Println(nextInt())
+  // newInt := function.ClosureFunc()
+  // fmt.Println(newInt())
+  // fmt.Println(nextInt())
+
+  // fib := function.RecursiveFunc(4)
+  // fmt.Println("Recursive Function", fib)
+
+  // ranges.GoRange()
+
+  pointers.GoPointers()
 
 }
