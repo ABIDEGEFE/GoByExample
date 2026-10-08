@@ -50,9 +50,11 @@ func ClosureFunc() func() int {
 		return count
 	}
 }
-
-func SampleFunc() int{
-	var num1, num2 int = 4, 5
-	var sum int = num1 + num2
-	return sum
+// Recursive function in golang is used to solve problems by breaking the main problem into smaller ones.
+// It calls itslef from within the code
+func RecursiveFunc(n int) int{
+	if n < 2{
+		return n //base-case condition to stop the call at this point
+	}
+	return RecursiveFunc(n-1) + RecursiveFunc(n-2)
 }
