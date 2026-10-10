@@ -1,7 +1,7 @@
 package main
 
 import (
-  "fmt"
+  // "fmt"
   // "codingPractice/values"
   // "codingPractice/variables"
   // "codingPractice/constant"
@@ -13,7 +13,8 @@ import (
   // "codingPractice/ranges"
   // "codingPractice/pointers"
   // "codingPractice/stringsAndRunes"
-  "codingPractice/structs"
+  // "codingPractice/structs"
+  "codingPractice/method"
 )
 
 func main(){
@@ -65,9 +66,12 @@ func main(){
 
   // stringsAndRunes.GoStrings()
 
-  teacher := structs.Teacher()
-  driver := structs.Driver()
-  fmt.Println("Memory address of teacher", &teacher, "Memory address of Driver", &driver) // each function constructs its own dedicated instance of struct
-  fmt.Println(teacher.Name) // use . to access fields of struct
-  fmt.Println(driver.Name)
+  // teacher := structs.Teacher()
+  // driver := structs.Driver()
+  // fmt.Println("Memory address of teacher", &teacher, "Memory address of Driver", &driver) // each function constructs its own dedicated instance of struct
+  // fmt.Println(teacher.Name) // use . to access fields of struct
+  // fmt.Println(driver.Name)
+
+  method.Caller()
+
 }
