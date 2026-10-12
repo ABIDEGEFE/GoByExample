@@ -14,7 +14,8 @@ import (
   // "codingPractice/pointers"
   // "codingPractice/stringsAndRunes"
   // "codingPractice/structs"
-  "codingPractice/method"
+  // "codingPractice/method"
+  "codingPractice/interfaces"
 )
 
 func main(){
@@ -72,6 +73,8 @@ func main(){
   // fmt.Println(teacher.Name) // use . to access fields of struct
   // fmt.Println(driver.Name)
 
-  method.Caller()
+  // method.Caller()
+
+  interfaces.Caller()
 
 }
