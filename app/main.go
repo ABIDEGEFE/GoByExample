@@ -16,7 +16,8 @@ import (
   // "codingPractice/structs"
   // "codingPractice/method"
   // "codingPractice/interfaces"
-  "codingPractice/enums"
+  // "codingPractice/enums"
+  "codingPractice/embededStruct"
 )
 
 func main(){
@@ -78,6 +79,8 @@ func main(){
 
   // interfaces.Caller()
 
-  enums.EnumsCaller()
+  // enums.EnumsCaller()
+
+  embededStruct.EmbededCaller()
 
 }
