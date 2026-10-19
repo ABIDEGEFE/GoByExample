@@ -15,7 +15,8 @@ import (
   // "codingPractice/stringsAndRunes"
   // "codingPractice/structs"
   // "codingPractice/method"
-  "codingPractice/interfaces"
+  // "codingPractice/interfaces"
+  "codingPractice/enums"
 )
 
 func main(){
@@ -75,6 +76,8 @@ func main(){
 
   // method.Caller()
 
-  interfaces.Caller()
+  // interfaces.Caller()
+
+  enums.EnumsCaller()
 
 }
