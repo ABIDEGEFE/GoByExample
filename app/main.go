@@ -18,7 +18,8 @@ import (
   // "codingPractice/interfaces"
   // "codingPractice/enums"
   // "codingPractice/embededStruct"
-  "codingPractice/generics"
+  // "codingPractice/generics"
+  "codingPractice/error"
 )
 
 func main(){
@@ -83,6 +84,7 @@ func main(){
   // enums.EnumsCaller()
 
   // embededStruct.EmbededCaller()
-  generics.GenericCaller()
+  // generics.GenericCaller()
+  error.ErrorCaller()
 
 }
