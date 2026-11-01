@@ -19,7 +19,8 @@ import (
   // "codingPractice/enums"
   // "codingPractice/embededStruct"
   // "codingPractice/generics"
-  "codingPractice/error"
+  // "codingPractice/error"
+  "codingPractice/gosIterator"
 )
 
 func main(){
@@ -85,6 +86,8 @@ func main(){
 
   // embededStruct.EmbededCaller()
   // generics.GenericCaller()
-  error.ErrorCaller()
+  // error.ErrorCaller()
+
+  gosIterator.IterCaller()
 
 }
