@@ -20,7 +20,10 @@ import (
   // "codingPractice/embededStruct"
   // "codingPractice/generics"
   // "codingPractice/error"
-  "codingPractice/gosIterator"
+  // "codingPractice/gosIterator"
+  // "codingPractice/goRoutine"
+  // "codingPractice/channels"
+  "codingPractice/bufferedChannel"
 )
 
 func main(){
@@ -88,6 +91,10 @@ func main(){
   // generics.GenericCaller()
   // error.ErrorCaller()
 
-  gosIterator.IterCaller()
+  // gosIterator.IterCaller()
+  // goRoutine.GoroutineCaller()
+  // channels.ChannelCaller()
+
+  bufferedChannel.BufferedChanelCaller()
 
 }
