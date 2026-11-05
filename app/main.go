@@ -23,7 +23,8 @@ import (
   // "codingPractice/gosIterator"
   // "codingPractice/goRoutine"
   // "codingPractice/channels"
-  "codingPractice/bufferedChannel"
+  // "codingPractice/bufferedChannel"
+  "codingPractice/selects"
 )
 
 func main(){
@@ -95,6 +96,7 @@ func main(){
   // goRoutine.GoroutineCaller()
   // channels.ChannelCaller()
 
-  bufferedChannel.BufferedChanelCaller()
+  // bufferedChannel.BufferedChanelCaller()
+  selects.SelectCaller()
 
 }
