@@ -24,7 +24,8 @@ import (
   // "codingPractice/goRoutine"
   // "codingPractice/channels"
   // "codingPractice/bufferedChannel"
-  "codingPractice/selects"
+  // "codingPractice/selects"
+  "codingPractice/timeouts"
 )
 
 func main(){
@@ -97,6 +98,7 @@ func main(){
   // channels.ChannelCaller()
 
   // bufferedChannel.BufferedChanelCaller()
-  selects.SelectCaller()
+  // selects.SelectCaller()
+  timeouts.TimeoutCaller()
 
 }
