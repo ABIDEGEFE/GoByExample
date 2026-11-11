@@ -25,7 +25,8 @@ import (
   // "codingPractice/channels"
   // "codingPractice/bufferedChannel"
   // "codingPractice/selects"
-  "codingPractice/timeouts"
+  // "codingPractice/timeouts"
+  "codingPractice/closechannel"
 )
 
 func main(){
@@ -99,6 +100,7 @@ func main(){
 
   // bufferedChannel.BufferedChanelCaller()
   // selects.SelectCaller()
-  timeouts.TimeoutCaller()
+  // timeouts.TimeoutCaller()
 
+  closechannel.ClosingChannelCaller()
 }
