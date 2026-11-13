@@ -26,7 +26,8 @@ import (
   // "codingPractice/bufferedChannel"
   // "codingPractice/selects"
   // "codingPractice/timeouts"
-  "codingPractice/closechannel"
+  // "codingPractice/closechannel"
+  "codingPractice/timers"
 )
 
 func main(){
@@ -102,5 +103,6 @@ func main(){
   // selects.SelectCaller()
   // timeouts.TimeoutCaller()
 
-  closechannel.ClosingChannelCaller()
+  // closechannel.ClosingChannelCaller()
+  timers.TimerCaller()
 }
