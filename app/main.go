@@ -27,7 +27,8 @@ import (
   // "codingPractice/selects"
   // "codingPractice/timeouts"
   // "codingPractice/closechannel"
-  "codingPractice/timers"
+  // "codingPractice/timers"
+  "codingPractice/tickers"
 )
 
 func main(){
@@ -104,5 +105,6 @@ func main(){
   // timeouts.TimeoutCaller()
 
   // closechannel.ClosingChannelCaller()
-  timers.TimerCaller()
+  // timers.TimerCaller()
+  tickers.TickerCaller()
 }
