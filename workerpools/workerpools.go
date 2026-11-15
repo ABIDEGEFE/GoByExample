@@ -24,13 +24,14 @@ func WorkerPoolsCaller(){
 func JobSender(){
    numJob := 5
    jobs := make(chan int, numJob)
-   for i := 1; i<=3; i++{
-	go JobReciever(i, jobs, result)
-   }
+//    for i := 1; i<=3; i++{
+// 	go JobReciever(i, jobs, result)
+//    }
    for j := 1; j<=numJob; j++{
 	jobs<-j
    }
    close(jobs)
+   JobReciever(1, jobs, result)
 }
 func JobReciever(id int, jobs <-chan int, result chan<- int){
    for job := range jobs{
