@@ -29,7 +29,8 @@ import (
   // "codingPractice/closechannel"
   // "codingPractice/timers"
   // "codingPractice/tickers"
-  "codingPractice/workerpools"
+  // "codingPractice/workerpools"
+  "codingPractice/waitgroup"
 )
 
 func main(){
@@ -109,5 +110,6 @@ func main(){
   // timers.TimerCaller()
   // tickers.TickerCaller()
 
-  workerpools.WorkerPoolsCaller()
+  // workerpools.WorkerPoolsCaller()
+  waitgroup.WaitGroupCaller()
 }
