@@ -30,7 +30,8 @@ import (
   // "codingPractice/timers"
   // "codingPractice/tickers"
   // "codingPractice/workerpools"
-  "codingPractice/waitgroup"
+  // "codingPractice/waitgroup"
+  "codingPractice/rateLimiter"
 )
 
 func main(){
@@ -111,5 +112,6 @@ func main(){
   // tickers.TickerCaller()
 
   // workerpools.WorkerPoolsCaller()
-  waitgroup.WaitGroupCaller()
+  // waitgroup.WaitGroupCaller()
+  rateLimiter.GoRateLimiterCaller()
 }
