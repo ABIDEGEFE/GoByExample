@@ -1,7 +1,7 @@
 package main
 
 import (
-  // "fmt"
+  "fmt"
   // "codingPractice/values"
   // "codingPractice/variables"
   // "codingPractice/constant"
@@ -31,7 +31,8 @@ import (
   // "codingPractice/tickers"
   // "codingPractice/workerpools"
   // "codingPractice/waitgroup"
-  "codingPractice/rateLimiter"
+  // "codingPractice/rateLimiter"
+  "codingPractice/atomicCounter"
 )
 
 func main(){
@@ -113,5 +114,8 @@ func main(){
 
   // workerpools.WorkerPoolsCaller()
   // waitgroup.WaitGroupCaller()
-  rateLimiter.GoRateLimiterCaller()
+  // rateLimiter.GoRateLimiterCaller()
+  atomicCounter.AtomicCounterCaller()
+  fmt.Println("===================================================================")
+  atomicCounter.CounterWithoutAtomic()
 }
