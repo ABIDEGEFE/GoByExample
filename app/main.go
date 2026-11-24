@@ -37,7 +37,8 @@ import (
   // "codingPractice/statefulGoroutines"
   // "codingPractice/sortFunc"
   // "codingPractice/panics"
-  "codingPractice/stringFunction"
+  // "codingPractice/stringFunction"
+  "codingPractice/stringFormatting"
 )
 
 func main(){
@@ -133,5 +134,6 @@ func main(){
   // panics.PanicCaller()
   // fmt.Println("Sum of the program", 9+9)
 
-  stringFunction.StringFunctionCaller()
+  // stringFunction.StringFunctionCaller()
+  stringFormatting.StringFormattingCaller()
 }
