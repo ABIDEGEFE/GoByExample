@@ -1,7 +1,7 @@
 package main
 
 import (
-  "fmt"
+  // "fmt"
   // "codingPractice/values"
   // "codingPractice/variables"
   // "codingPractice/constant"
@@ -32,7 +32,12 @@ import (
   // "codingPractice/workerpools"
   // "codingPractice/waitgroup"
   // "codingPractice/rateLimiter"
-  "codingPractice/atomicCounter"
+  // "codingPractice/atomicCounter"
+  // "codingPractice/mutex"
+  // "codingPractice/statefulGoroutines"
+  // "codingPractice/sortFunc"
+  // "codingPractice/panics"
+  "codingPractice/stringFunction"
 )
 
 func main(){
@@ -115,7 +120,18 @@ func main(){
   // workerpools.WorkerPoolsCaller()
   // waitgroup.WaitGroupCaller()
   // rateLimiter.GoRateLimiterCaller()
-  atomicCounter.AtomicCounterCaller()
-  fmt.Println("===================================================================")
-  atomicCounter.CounterWithoutAtomic()
+
+  // atomicCounter.AtomicCounterCaller()
+  // fmt.Println("===================================================================")
+  // atomicCounter.CounterWithoutAtomic()
+
+  // mutex.MutexCaller()
+
+  // statefulGoroutines.StatefulGoroutines()
+  
+  // sortFunc.SortFuncCaller()
+  // panics.PanicCaller()
+  // fmt.Println("Sum of the program", 9+9)
+
+  stringFunction.StringFunctionCaller()
 }
