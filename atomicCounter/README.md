@@ -4,10 +4,12 @@
 ---
 ## How ops.Add(1) Works Under the Hood
 
-* Instead of executing separate Read-Modify-Write steps, **ops.Add(1)** compiles down to a single, indivisible hardware instruction (such as **LOCK XADD** on x86 processors or **LDADD** on ARM):
-• **CPU Cache Locking**: When a CPU core executes an atomic instruction, it locks that specific memory address (cache line) at the hardware level.
-• **Forced Ordering**: No other CPU core can read from or write to ops until that single instruction completes.
-• **Memory Visibility**: Atomic operations act as memory barriers, ensuring updates made by one CPU core are immediately visible to all other cores rather than remaining isolated in a local CPU cache.
+Instead of executing separate Read-Modify-Write steps, `ops.Add(1)` compiles down to a single, indivisible hardware instruction (such as `LOCK XADD` on x86 processors or `LDADD` on ARM):
+
+* **CPU Cache Locking:** When a CPU core executes an atomic instruction, it locks that specific memory address (cache line) at the hardware level.
+* **Forced Ordering:** No other CPU core can read from or write to `ops` until that single instruction completes.
+* **Memory Visibility:** Atomic operations act as memory barriers, ensuring updates made by one CPU core are immediately visible to all other cores rather than remaining isolated in a local CPU cache.
+
 ---
 
 <img width="947" height="536" alt="atomicCounter" src="https://github.com/user-attachments/assets/e8b5ffe9-a566-431d-97cf-7cc78a998cf4" />
