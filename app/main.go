@@ -38,7 +38,16 @@ import (
   // "codingPractice/sortFunc"
   // "codingPractice/panics"
   // "codingPractice/stringFunction"
-  "codingPractice/stringFormatting"
+  // "codingPractice/stringFormatting"
+  // "codingPractice/textTemplate"
+  // "codingPractice/regularexp"
+  // "codingPractice/gojson"
+  // "codingPractice/gotime"
+  // "codingPractice/epoch"
+  // "codingPractice/randomNumbers"
+  // "codingPractice/numberParsing"
+  // "codingPractice/urlParsing"
+  "codingPractice/hashing"
 )
 
 func main(){
@@ -135,5 +144,17 @@ func main(){
   // fmt.Println("Sum of the program", 9+9)
 
   // stringFunction.StringFunctionCaller()
-  stringFormatting.StringFormattingCaller()
+  // stringFormatting.StringFormattingCaller()
+
+  // textTemplate.TextTemplateCaller()
+  // regularexp.RegularExpCaller()
+  // gojson.JsonCaller()
+  // gotime.TimeCaller()
+
+  // epoch.EpochCaller()
+
+  // randomNumbers.RandomNumbersCaller()
+  // numberParsing.NumberParsingCaller()
+  // urlParsing.UrlParsingCaller()
+  hashing.HashingCaller()
 }
